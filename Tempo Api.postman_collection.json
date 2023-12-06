@@ -1,0 +1,1048 @@
+{
+	"info": {
+		"_postman_id": "d23cbae9-6fec-414f-bbed-219b6614ef4a",
+		"name": "Tempo Api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11131161",
+		"_collection_link": "https://www.postman.com/rezawahyu/workspace/tempo-api/collection/11131161-d23cbae9-6fec-414f-bbed-219b6614ef4a?action=share&source=collection_link&creator=11131161"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fullname\": \"Reza Wahyu Ramadhan\",\r\n    \"email\": \"reza@admin.com\",\r\n    \"password\": \"11111111\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/register",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"fullname\": \"Reza Wahyu Ramadhan\",\r\n    \"email\": \"reza@reza.com\",\r\n    \"password\": \"11111111\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/register",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"register"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=5184000; includeSubDomains"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Dns-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-Xss-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Dec 2023 07:08:42 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "109"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 201,\n    \"method\": \"POST\",\n    \"message\": \"Register new account successfully\",\n    \"data\": null\n}"
+						},
+						{
+							"name": "Redundant Email",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"fullname\": \"Reza Wahyu Ramadhan\",\r\n    \"email\": \"reza@reza.com\",\r\n    \"password\": \"11111111\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/register",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"register"
+									]
+								}
+							},
+							"status": "Conflict",
+							"code": 409,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=5184000; includeSubDomains"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Dns-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-Xss-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Dec 2023 07:10:02 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "100"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 409,\n    \"method\": \"POST\",\n    \"message\": \"Email already exist\",\n    \"data\": null\n}"
+						},
+						{
+							"name": "Validate Body",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"fullname\": \"Reza Wahyu Ramadhan\",\r\n    \"email\": \"reza@reza.com\",\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/register",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"register"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=5184000; includeSubDomains"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Dns-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-Xss-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Dec 2023 07:10:31 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "185"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 400,\n    \"method\": \"POST\",\n    \"error\": {\n        \"results\": {\n            \"errors\": [\n                {\n                    \"Fullname\": {\n                        \"message\": \"fullname is required on body\",\n                        \"value\": \"\",\n                        \"param\": \"Fullname\",\n                        \"tag\": \"required\"\n                    }\n                },\n                {\n                    \"Email\": {\n                        \"message\": \"email is required on body\",\n                        \"value\": \"\",\n                        \"param\": \"Email\",\n                        \"tag\": \"required\"\n                    }\n                },\n                {\n                    \"Password\": {\n                        \"message\": \"password is required on body\",\n                        \"value\": \"\",\n                        \"param\": \"Password\",\n                        \"tag\": \"required\"\n                    }\n                }\n            ]\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"reza@admin.com\",\r\n    \"password\": \"11111111\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"reza@admin.com\",\r\n    \"password\": \"11111111\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/login",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=5184000; includeSubDomains"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Dns-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-Xss-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Dec 2023 07:57:53 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "291"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"method\": \"POST\",\n    \"message\": \"Login successfully\",\n    \"data\": {\n        \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemF0aW9uIjp0cnVlLCJlbWFpbCI6InJlemFAYWRtaW4uY29tIiwiZXhwIjoxNzAxOTM1ODczLCJpZCI6IjI4ZjEzYmE3LTliNTctNGE4NC05MTQ3LTBmNjg0MTY4NTNkNyJ9.Z7qWkfTmBVW2nyL_cOwO0-kCODKofVK2gU4-0I79Ljs\"\n    }\n}"
+						},
+						{
+							"name": "Wrong password",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"reza@admin.com\",\r\n    \"password\": \"11111112\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/login",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=5184000; includeSubDomains"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Dns-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-Xss-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Dec 2023 07:58:19 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "108"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 403,\n    \"method\": \"POST\",\n    \"message\": \"Username or password is wrong\",\n    \"data\": null\n}"
+						},
+						{
+							"name": "Not Registered",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"12@admin.com\",\r\n    \"password\": \"11111112\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/login",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=5184000; includeSubDomains"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Dns-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-Xss-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Dec 2023 07:58:31 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "107"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 404,\n    \"method\": \"POST\",\n    \"message\": \"User account is not registered\",\n    \"data\": null\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "News",
+			"item": [
+				{
+					"name": "Get News",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/news",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"news"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get News",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/news",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"news"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=5184000; includeSubDomains"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Dns-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-Xss-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Dec 2023 10:23:53 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "294"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"method\": \"POST\",\n    \"message\": \"\",\n    \"data\": [\n        {\n            \"id\": \"134368d6-edb0-4bac-b501-f1fe688fd5a7\",\n            \"title\": \"Ganti Judul\",\n            \"body\": \"Halo ini adalah contoh berita baru\",\n            \"created_by\": \"28f13ba7-9b57-4a84-9147-0f68416853d7\",\n            \"updated_by\": \"28f13ba7-9b57-4a84-9147-0f68416853d7\",\n            \"created_at\": \"0001-01-01T00:00:00Z\",\n            \"updated_at\": \"0001-01-01T00:00:00Z\",\n            \"user_created\": {\n                \"id\": \"\",\n                \"created_at\": \"0001-01-01T00:00:00Z\",\n                \"updated_at\": \"0001-01-01T00:00:00Z\"\n            },\n            \"user_updated\": {\n                \"id\": \"\",\n                \"created_at\": \"0001-01-01T00:00:00Z\",\n                \"updated_at\": \"0001-01-01T00:00:00Z\"\n            }\n        },\n        {\n            \"id\": \"8a813d61-ffd6-439f-bd31-b15c47f6affa\",\n            \"title\": \"Haloo\",\n            \"body\": \"Halo ini adalah contoh berita baru\",\n            \"created_by\": \"28f13ba7-9b57-4a84-9147-0f68416853d7\",\n            \"updated_by\": \"\",\n            \"created_at\": \"0001-01-01T00:00:00Z\",\n            \"updated_at\": \"0001-01-01T00:00:00Z\",\n            \"user_created\": {\n                \"id\": \"\",\n                \"created_at\": \"0001-01-01T00:00:00Z\",\n                \"updated_at\": \"0001-01-01T00:00:00Z\"\n            },\n            \"user_updated\": {\n                \"id\": \"\",\n                \"created_at\": \"0001-01-01T00:00:00Z\",\n                \"updated_at\": \"0001-01-01T00:00:00Z\"\n            }\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Create News",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Haloo\",\r\n    \"body\": \"Halo ini adalah contoh berita baru\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/news",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"news"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Haloo\",\r\n    \"body\": \"Halo ini adalah contoh berita baru\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/news",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"news"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=5184000; includeSubDomains"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Dns-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-Xss-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Dec 2023 09:38:58 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "286"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"method\": \"POST\",\n    \"message\": \"News successfully created\",\n    \"data\": {\n        \"id\": \"134368d6-edb0-4bac-b501-f1fe688fd5a7\",\n        \"title\": \"Haloo\",\n        \"body\": \"Halo ini adalah contoh berita baru\",\n        \"created_by\": \"28f13ba7-9b57-4a84-9147-0f68416853d7\",\n        \"updated_by\": \"\",\n        \"created_at\": \"2023-12-06T16:38:58.0346499+07:00\",\n        \"updated_at\": \"2023-12-06T16:38:58.035+07:00\",\n        \"user_created\": {\n            \"id\": \"\",\n            \"created_at\": \"0001-01-01T00:00:00Z\",\n            \"updated_at\": \"0001-01-01T00:00:00Z\"\n        },\n        \"user_updated\": {\n            \"id\": \"\",\n            \"created_at\": \"0001-01-01T00:00:00Z\",\n            \"updated_at\": \"0001-01-01T00:00:00Z\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Show News",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/news/a203beaa-8fb7-4ce9-b0e6-1fddc7b14a2f",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"news",
+								"a203beaa-8fb7-4ce9-b0e6-1fddc7b14a2f"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Show News",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/news/134368d6-edb0-4bac-b501-f1fe688fd5a7",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"news",
+										"134368d6-edb0-4bac-b501-f1fe688fd5a7"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=5184000; includeSubDomains"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Dns-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-Xss-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Dec 2023 10:31:04 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "249"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"method\": \"POST\",\n    \"message\": \"\",\n    \"data\": {\n        \"id\": \"134368d6-edb0-4bac-b501-f1fe688fd5a7\",\n        \"title\": \"Ganti Judul\",\n        \"body\": \"Halo ini adalah contoh berita baru\",\n        \"created_by\": \"28f13ba7-9b57-4a84-9147-0f68416853d7\",\n        \"updated_by\": \"28f13ba7-9b57-4a84-9147-0f68416853d7\",\n        \"created_at\": \"0001-01-01T00:00:00Z\",\n        \"updated_at\": \"0001-01-01T00:00:00Z\",\n        \"user_created\": {\n            \"id\": \"\",\n            \"created_at\": \"0001-01-01T00:00:00Z\",\n            \"updated_at\": \"0001-01-01T00:00:00Z\"\n        },\n        \"user_updated\": {\n            \"id\": \"\",\n            \"created_at\": \"0001-01-01T00:00:00Z\",\n            \"updated_at\": \"0001-01-01T00:00:00Z\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update News",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Ganti Judul\",\r\n    \"body\": \"Halo ini adalah contoh berita baru\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/news/134368d6-edb0-4bac-b501-f1fe688fd5a7",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"news",
+								"134368d6-edb0-4bac-b501-f1fe688fd5a7"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Ganti Judul\",\r\n    \"body\": \"Halo ini adalah contoh berita baru\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/news/134368d6-edb0-4bac-b501-f1fe688fd5a7",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"news",
+										"134368d6-edb0-4bac-b501-f1fe688fd5a7"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=5184000; includeSubDomains"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Dns-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-Xss-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Dec 2023 10:12:30 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "292"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"method\": \"PUT\",\n    \"message\": \"News successfully Updated\",\n    \"data\": {\n        \"id\": \"134368d6-edb0-4bac-b501-f1fe688fd5a7\",\n        \"title\": \"Ganti Judul\",\n        \"body\": \"Halo ini adalah contoh berita baru\",\n        \"created_by\": \"28f13ba7-9b57-4a84-9147-0f68416853d7\",\n        \"updated_by\": \"28f13ba7-9b57-4a84-9147-0f68416853d7\",\n        \"created_at\": \"0001-01-01T00:00:00Z\",\n        \"updated_at\": \"2023-12-06T17:12:30.345+07:00\",\n        \"user_created\": {\n            \"id\": \"\",\n            \"created_at\": \"0001-01-01T00:00:00Z\",\n            \"updated_at\": \"0001-01-01T00:00:00Z\"\n        },\n        \"user_updated\": {\n            \"id\": \"\",\n            \"created_at\": \"0001-01-01T00:00:00Z\",\n            \"updated_at\": \"0001-01-01T00:00:00Z\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete News",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/news/134368d6-edb0-4bac-b501-f1fe688fd5a7",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"news",
+								"134368d6-edb0-4bac-b501-f1fe688fd5a7"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete News",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/news/134368d6-edb0-4bac-b501-f1fe688fd5a7",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"news",
+										"134368d6-edb0-4bac-b501-f1fe688fd5a7"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=5184000; includeSubDomains"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Dns-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-Xss-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Dec 2023 10:37:29 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "96"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"method\": \"POST\",\n    \"message\": \"delete successful\",\n    \"data\": null\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
